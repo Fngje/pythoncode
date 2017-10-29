@@ -2,10 +2,11 @@
 # -*- coding:utf-8 -*-
 #Author:jie.fang
 
-import sys
 import pygame
 from settings import Settings
 from ship import Ship
+import game_functions as gf
+
 
 def run_game():
     pygame.init()
@@ -15,12 +16,10 @@ def run_game():
 
     ship = Ship(screen)
 
-    #bg_color = (230,230,230)
+    bg_color = (230,230,230)
     while True:
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
+        gf.check_event()
         screen.fill(ai_settings.bg_color)
         ship.blitme()
 
